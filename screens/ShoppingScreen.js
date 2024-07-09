@@ -39,7 +39,7 @@ const ShoppingScreen = (props) => {
   const [itemsPerPage, setItemsPerPage] = useState(4);
   const [searchQuery, setSearchQuery] = useState('');
 
-  console.log('searchQuery', searchQuery);
+  // console.log('searchQuery', searchQuery);
 
   useEffect(() => {
     const fetchCategory = async () => {

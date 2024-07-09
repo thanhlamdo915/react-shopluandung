@@ -11,7 +11,7 @@ import React from 'react';
 import {AntDesign} from '@expo/vector-icons';
 
 const ProductCard = ({item, handleProductClick}) => {
-  console.log('item', item);
+  // console.log('item', item);
   return (
     <View style={{width: '50%', height: 'auto'}}>
       <TouchableOpacity

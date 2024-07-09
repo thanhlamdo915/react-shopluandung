@@ -173,7 +173,10 @@ const ConfirmationScreen = () => {
           }}
         >
           {steps?.map((step, index) => (
-            <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <View
+              key={index}
+              style={{justifyContent: 'center', alignItems: 'center'}}
+            >
               {index > 0 && (
                 <View
                   style={[
