@@ -87,10 +87,11 @@ const ManageOrderAdmin = () => {
       setOrders(response.data);
       setLoading(false);
     } catch (error) {
-      console.error(
-        `Error fetching orders for month ${month} and year ${year}:`,
-        error
-      );
+      // console.error(
+      //   `Error fetching orders for month ${month} and year ${year}:`,
+      //   error
+      // );
+      Alert.alert('You need select both moth and year');
     }
   };
 

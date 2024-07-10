@@ -29,6 +29,7 @@ const ProfileScreen = () => {
   const clearAuthToken = async () => {
     await AsyncStorage.removeItem('authToken');
     console.log('auth token cleared');
+    setUserId(undefined);
     navigation.replace('Login');
   };
   useLayoutEffect(() => {
@@ -60,21 +61,21 @@ const ProfileScreen = () => {
     fetchUserProfile();
   }, [userId, modalVisible]);
   const [modalVisible, setModalVisible] = useState(false);
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const response = await axios.get(
-          `https://backend-shopluandung.onrender.com/orders/${userId}`
-        );
-        const orders = response.data.orders;
-        setOrders(orders);
-        setLoading(false);
-      } catch (error) {
-        // console.log('error', error);
-      }
-    };
-    fetchOrders();
-  }, []);
+  // useEffect(() => {
+  //   const fetchOrders = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://backend-shopluandung.onrender.com/orders/${userId}`
+  //       );
+  //       const orders = response.data.orders;
+  //       setOrders(orders);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       // console.log('error', error);
+  //     }
+  //   };
+  //   fetchOrders();
+  // }, []);
   return (
     <SafeAreaProvider>
       <SafeAreaView
