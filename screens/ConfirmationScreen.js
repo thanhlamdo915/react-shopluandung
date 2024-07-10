@@ -143,7 +143,7 @@ const ConfirmationScreen = () => {
       console.log('error order', error);
     }
   };
-  console.log('usedRewardPoints main', usedRewardPoints);
+  // console.log('usedRewardPoints main', usedRewardPoints);
   return (
     <ScrollView style={{marginTop: 55}}>
       <View

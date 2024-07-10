@@ -44,7 +44,7 @@ const ViewOrderHistory = () => {
       setLoading(false);
       console.log('orders', sortedOrders[0].products);
     } catch (error) {
-      console.log('error', error);
+      console.log('error123', error);
     }
   };
 

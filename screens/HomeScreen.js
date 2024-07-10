@@ -20,28 +20,32 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import jwt_decode from 'jwt-decode';
 
 const HomeScreen = () => {
-  const {userId, setUserId} = useContext(UserType);
   const [user, setUser] = useState();
+  const {userId, setUserId} = useContext(UserType);
   const [modalVisible, setModalVisible] = useState(false);
   const [totalPrices, setTotalPrices] = useState([]);
   const [totalRewardPoints, setTotalRewardPoints] = useState([]);
   const [usedRewardPoints, setUsedRewardPoints] = useState([]);
 
   useEffect(() => {
-    fetchUser();
-    fetchUserProfile();
-    getAllTotalRewardPoints();
-  }, [userId, modalVisible]);
-  const fetchUser = async () => {
-    const token = await AsyncStorage.getItem('authToken');
-    const decodedToken = jwt_decode(token);
-    const userId = decodedToken.userId;
-    setUserId(userId);
-  };
+    const fetchUser = async () => {
+      const token = await AsyncStorage.getItem('authToken');
+      const decodedToken = jwt_decode(token);
+      const userId = decodedToken.userId;
+      setUserId(userId);
+    };
 
+    fetchUser();
+  }, []);
+  useEffect(() => {
+    if (userId) {
+      fetchUserProfile();
+      getAllTotalRewardPoints();
+    }
+  }, [userId, modalVisible]);
   const fetchUserProfile = async () => {
     try {
-      console.log('Fetching profile for user ID:', userId); // Log userId for debugging
+      console.log('Fetching profile for user ID main page:', userId); // Log userId for debugging
       if (!userId) {
         console.log('No user ID provided');
         return;
@@ -63,18 +67,17 @@ const HomeScreen = () => {
       const {orders} = response.data;
       const totalPrices = orders.map((order) => order.totalPrice);
       setTotalPrices(totalPrices);
-      // console.log(totalPrices);
+      console.log(totalPrices);
       const totalRewardPoints = orders.map((order) => order.totalRewardPoints);
       setTotalRewardPoints(totalRewardPoints);
-      // console.log(totalRewardPoints);
+      console.log(totalRewardPoints);
       const usedRewardPoints = orders.map((order) => order.usedRewardPoints);
       setUsedRewardPoints(usedRewardPoints);
-      // console.log(usedRewardPoints);
+      console.log(usedRewardPoints);
     } catch (error) {
-      // console.error('Error fetching orders 123:', error);
+      console.error('Error fetching orders 123:', error);
     }
   };
-
   const sumArray = (arr) => {
     return arr.reduce((acc, currentValue) => acc + currentValue, 0);
   };

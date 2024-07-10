@@ -12,7 +12,7 @@ import {
 } from '@expo/vector-icons';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
-import ShoppingScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductInfoScreen from '../screens/ProductInfoScreen';
 import AddAddressScreen from '../screens/AddAddressScreen';
@@ -20,7 +20,7 @@ import AddressScreen from '../screens/AddressScreen';
 import CartScreen from '../screens/CartScreen';
 import ConfirmationScreen from '../screens/ConfirmationScreen';
 import OrderScreen from '../screens/OrderScreen';
-import LandingScreen from '../screens/ShoppingScreen';
+import ShoppingScreen from '../screens/ShoppingScreen';
 import AdminPanel from '../screens/AdminPanel';
 import ViewOrderHistory from '../screens/ViewOrderHistory';
 import SearchPage from '../screens/SearchPage';
@@ -45,7 +45,7 @@ const StackNavigator = () => {
       <Tab.Navigator>
         <Tab.Screen
           name="Home"
-          component={ShoppingScreen}
+          component={HomeScreen}
           options={{
             tabBarLabel: 'Home',
             tabBarLabelStyle: {color: '#822DE2'},
@@ -60,7 +60,7 @@ const StackNavigator = () => {
         />
         <Tab.Screen
           name="Shopping"
-          component={LandingScreen}
+          component={ShoppingScreen}
           options={{
             tabBarLabel: 'Shopping',
             tabBarLabelStyle: {color: '#822DE2'},
@@ -75,7 +75,7 @@ const StackNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="History"
+          name="Orders"
           component={ViewOrderHistory}
           options={{
             tabBarLabel: 'Orders',
@@ -111,6 +111,16 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {/* <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Shopping"
+          component={ShoppingScreen}
+          options={{headerShown: false}}
+        /> */}
         <Stack.Screen
           name="Login"
           component={LoginScreen}
