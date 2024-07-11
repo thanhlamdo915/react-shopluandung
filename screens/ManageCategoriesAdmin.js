@@ -25,11 +25,13 @@ const ManageCategoriesAdmin = () => {
     fetchCategory();
   }, []);
   const handleCategoryPage = (item) => {
-    props.navigation.navigate('CategoryProduct', {
-      categoryQuery: item._id,
+    navigation.navigate('UpdateCategoryScreen', {
+      _id: item._id,
+      name: item.name,
+      rewardPercentage: item.rewardPercentage,
+      image: item.image,
     });
   };
-  const numColumns = 3;
 
   return (
     <>
@@ -54,7 +56,7 @@ const ManageCategoriesAdmin = () => {
           {/* <Text>ManageCategoriesAdmin</Text> */}
           <View>
             <FlatList
-              horizontal={true}
+              vertical={true}
               // numColumns={Math.ceil(category.length / 2)}
               // numColumns={numColumns}
               data={category}

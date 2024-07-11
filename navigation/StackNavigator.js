@@ -36,6 +36,7 @@ import AdminDashboard from '../screens/AdminDashboard';
 import AdminProductDetail from '../screens/AdminProductDetail';
 import AdminLogin from '../screens/AdminLogin';
 import UpdateAddressScreen from '../screens/UpdateAddressScreen';
+import UpdateCategoryScreen from '../screens/UpdateCategoryScreen';
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -240,6 +241,11 @@ const StackNavigator = () => {
         <Stack.Screen
           name="UpdateAddressScreen"
           component={UpdateAddressScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="UpdateCategoryScreen"
+          component={UpdateCategoryScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
