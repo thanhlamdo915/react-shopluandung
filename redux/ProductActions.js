@@ -2,7 +2,7 @@
 export const updateProduct = (product) => async (dispatch) => {
   try {
     const response = await axios.put(
-      `http://localhost:8000/products/${productId}`,
+      `https://backend-shopluandung.onrender.com/products/${productId}`,
       product
     );
     dispatch({

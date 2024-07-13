@@ -72,7 +72,7 @@
 //       //   updatedProduct
 //       // );
 //       const response = await axios.put(
-//         `http://localhost:8000/products/${productId}`,
+//         `https://backend-shopluandung.onrender.com/products/${productId}`,
 //         updatedProduct
 //       );
 //       if (response.status === 200) {
@@ -91,7 +91,7 @@
 //   const handleRemoveProduct = async () => {
 //     try {
 //       const response = await axios.delete(
-//         `http://localhost:8000/products/${productId}`
+//         `https://backend-shopluandung.onrender.com/products/${productId}`
 //       );
 //       if (response.status === 200) {
 //         console.log('Product removed successfully');
@@ -446,7 +446,7 @@ const AdminProductDetail = () => {
       console.log('Updated product data:', updatedProduct);
 
       const response = await axios.put(
-        `http://localhost:8000/products/${productId}`,
+        `https://backend-shopluandung.onrender.com/products/${productId}`,
         updatedProduct
       );
       if (response.status === 200) {
@@ -467,7 +467,7 @@ const AdminProductDetail = () => {
   const handleRemoveProduct = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/products/${productId}`
+        `https://backend-shopluandung.onrender.com/products/${productId}`
       );
       if (response.status === 200) {
         Alert.alert('Success', 'Product removed successfully', [
@@ -562,7 +562,10 @@ const AdminProductDetail = () => {
             }}
           >
             <AntDesign name="arrowleft" size={24} color="black" />
-            <Text style={{textAlign: 'center', color: 'red'}}> go back</Text>
+            <Text style={{textAlign: 'center', color: 'red'}}>
+              {' '}
+              Admin Dashboard
+            </Text>
           </Pressable>
 
           <Text style={styles.label}>Name</Text>

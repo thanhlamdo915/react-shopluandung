@@ -48,7 +48,10 @@ const ManageCategoriesAdmin = () => {
             style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}
           >
             <AntDesign name="arrowleft" size={24} color="black" />
-            <Text style={{textAlign: 'center', color: 'red'}}> go back</Text>
+            <Text style={{textAlign: 'center', color: 'red'}}>
+              {' '}
+              Admin Dashboard
+            </Text>
           </Pressable>
           <Text style={styles.header}>Category Management</Text>
         </View>

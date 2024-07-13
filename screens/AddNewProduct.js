@@ -113,7 +113,7 @@ const AddProductScreen = ({navigation}) => {
       setSelectedImages(result.assets);
     }
   };
-  console.log('si', selectedImages[1]);
+  // console.log('si', selectedImages[1]);
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.all}>
@@ -137,7 +137,10 @@ const AddProductScreen = ({navigation}) => {
               }}
             >
               <AntDesign name="arrowleft" size={24} color="black" />
-              <Text style={{textAlign: 'center', color: 'red'}}> go back</Text>
+              <Text style={{textAlign: 'center', color: 'red'}}>
+                {' '}
+                Admin Dashboard
+              </Text>
             </Pressable>
           </View>
           <Text style={styles.label}>Category</Text>

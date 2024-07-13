@@ -43,7 +43,7 @@ const UpdateCategoryScreen = () => {
       };
 
       const response = await axios.put(
-        `http://localhost:8000/categories/${categoryId}`,
+        `https://backend-shopluandung.onrender.com/categories/${categoryId}`,
         updatedCategory
       );
       if (response.status === 200) {
@@ -115,7 +115,10 @@ const UpdateCategoryScreen = () => {
             style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}
           >
             <AntDesign name="arrowleft" size={24} color="black" />
-            <Text style={{textAlign: 'center', color: 'red'}}> go back</Text>
+            <Text style={{textAlign: 'center', color: 'red'}}>
+              {' '}
+              Admin Dashboard
+            </Text>
           </Pressable>
           <Text style={styles.header}>Category Management</Text>
         </View>
@@ -143,7 +146,7 @@ const UpdateCategoryScreen = () => {
           </TouchableOpacity>
           {image && (
             <View>
-              <Image source={{uri: image.uri}} style={styles.image} />
+              <Image source={{uri: image}} style={styles.image} />
               <Button title="Remove Image" onPress={handleRemoveImage} />
             </View>
           )}

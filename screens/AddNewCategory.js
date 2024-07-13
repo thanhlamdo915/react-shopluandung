@@ -101,7 +101,10 @@ const AddNewCategory = () => {
           }}
         >
           <AntDesign name="arrowleft" size={24} color="black" />
-          <Text style={{textAlign: 'center', color: 'red'}}> go back</Text>
+          <Text style={{textAlign: 'center', color: 'red'}}>
+            {' '}
+            Admin Dashboard
+          </Text>
         </Pressable>
       </View>
       <Text style={{fontSize: 22, fontWeight: 'bold'}}>ADD NEW CATEGORY</Text>
